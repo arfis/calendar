@@ -29,9 +29,7 @@ export class TimePickerComponent implements OnInit, OnChanges {
 
   setupTime() {
     if (this.time || this.time === 0) {
-      console.log(this.time);
       this.currentTime = convertTimeToString(this.time);
-      console.log(this.currentTime);
     }
   }
 

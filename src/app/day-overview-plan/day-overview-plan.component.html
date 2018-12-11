@@ -21,5 +21,10 @@
     <div class="actual-position"
          [style.top.%]="startPosition">
     </div>
+    <div class="selected booked" *ngFor="let booked of currentBookedTimes"
+         [style.top.%]="booked.topPosition"
+         [style.height.%]="booked.height"
+         [style.backgroundColor]="booked.color"
+    ></div>
   </div>
 </div>

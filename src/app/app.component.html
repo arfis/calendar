@@ -1,27 +1,32 @@
 <div class="wrapper">
   <div class="time-panel">
     <h1>
-      {{selectedDate}}
+      {{selectedFormatedDate}}
     </h1>
     <ms-time-picker [label]="'Starting'"
                     [time]="startingTime"
                     (onTimeChanges)="onStartTimeChange($event)"></ms-time-picker>
-    <ms-time-picker [label]="'Ending'" [time]="endingTime"></ms-time-picker>
+    <ms-time-picker [label]="'Ending'"
+                    [time]="endingTime"
+                    (onTimeChanges)="onEndTimeChange($event)"></ms-time-picker>
     <ms-time-picker [label]="'Duration'" [time]="endingTime - startingTime"></ms-time-picker>
   </div>
 
   <div class="selection-content">
     <ms-day-picker
-      [ngClass]="{'selected-date': selectedDate}"
+      [ngClass]="{'selected-date': selectedFormatedDate}"
       [locale]="locale"
       [month]="month"
       (onDaySelected)="onDaySelected($event)"
     ></ms-day-picker>
     <ms-day-overview-plan
-      *ngIf="selectedDate"
+      *ngIf="selectedFormatedDate"
       [granularity]="60"
       [frameHeight]="50"
       [startTime]="startingTime"
+      [endTime]="endingTime"
+      [bookedTimes]="bookedTimes"
+      [selectedDate]="selectedDate"
       (onTimeSelected)="onTimeSelected($event)"></ms-day-overview-plan>
   </div>
 </div>

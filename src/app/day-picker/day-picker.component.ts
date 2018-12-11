@@ -73,11 +73,10 @@ export class DayPickerComponent implements OnInit, OnChanges {
     const offset = this.days[lastIndex].day.getDay();
     const lastDay = this.days[lastIndex].day;
 
-    console.log(lastDay, offset);
 
     for (let offsetDay = 1; offsetDay <= 6 - offset; offsetDay++) {
       const day = addDays(lastDay, offsetDay);
-      this.days.push({day, month: MonthType.PREVIOUS});
+      this.days.push({day, month: MonthType.NEXT});
     }
 
   }
