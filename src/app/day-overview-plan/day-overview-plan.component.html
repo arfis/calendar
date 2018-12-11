@@ -1,15 +1,25 @@
-{{selected}}
 <div class="wrapper">
   <div class="time-axis">
-    <div class="frame" *ngFor="let timeFrame of timeFrames">
+    <div class="frame" *ngFor="let timeFrame of timeFrames"
+         [style.height.px]="frameHeight">
       <span class="time">{{getTimeFormat(timeFrame)}}</span>
     </div>
   </div>
-  <div class="content">
-    <div class="frame" *ngFor="let timeFrame of timeFrames"
-         [ngClass]="{'selected': isFrameSelected(timeFrame)}"
-         (mouseup)="stopSelection(timeFrame)"
-         (mousedown)="startSelection(timeFrame)"
-         (mouseover)="selectFrame(timeFrame)"></div>
+  <div #content class="content"
+       [style.height]="timeFrames.length * 20"
+       (mouseup)="setEndPosition($event)"
+       (mousedown)="setStartPosition($event)"
+       (mousemove)="selectFrame($event)">
+    <div class="frame"
+         [style.height.px]="frameHeight"
+         *ngFor="let timeFrame of timeFrames">
+    </div>
+    <div class="selected"
+         [style.top.%]="topPosition"
+         [style.height.%]="width"
+    ></div>
+    <div class="actual-position"
+         [style.top.%]="startPosition">
+    </div>
   </div>
 </div>

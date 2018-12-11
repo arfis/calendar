@@ -23,9 +23,9 @@ export class AppComponent {
 
   onTimeSelected(time) {
     console.log(time);
-    const {startingTime, endingTime} = time;
-    this.startingTime = startingTime;
-    this.endingTime = endingTime;
+    const {startTime, endTime} = time;
+    this.startingTime = startTime;
+    this.endingTime = endTime;
   }
 
   onStartTimeChange(time) {

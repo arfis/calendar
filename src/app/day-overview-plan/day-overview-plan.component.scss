@@ -20,22 +20,28 @@
   .content {
     width: 80%;
     user-select: none;
+    position: relative;
+
+    .actual-position {
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background-color: rgba(0, 128, 0, 0.57);
+    }
+
+    .selected {
+      width: 100%;
+      position: absolute;
+      background-color: rgba(0, 128, 0, 0.57);
+    }
 
     .frame {
       border-top: 1px solid rgba(0, 0, 0, 0.30);
-
-      &:hover {
-        background-color: rgba(0, 128, 0, 0.57);
-      }
-
-      &.selected {
-        background-color: rgba(0, 128, 0, 0.57);
-      }
     }
   }
 
   .frame {
     box-sizing: border-box;
-    height:20px;
+    z-index: 2;
   }
 }

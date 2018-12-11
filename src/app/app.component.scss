@@ -1,8 +1,16 @@
+.wrapper {
+  height: 95vh;
+  box-sizing: border-box;;
+}
+
 .selection-content {
   display: flex;
+  height: 100%;
+  margin-top: 20px;
 
   ms-day-picker {
     display: block;
+    height: 100%;
 
     &.selected-date {
       width: 50%;
