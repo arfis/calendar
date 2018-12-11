@@ -1,0 +1,24 @@
+.selection-content {
+  display: flex;
+
+  ms-day-picker {
+    display: block;
+
+    &.selected-date {
+      width: 50%;
+      margin: 0px 20px;
+    }
+  }
+
+  ms-day-overview-plan {
+    width: 50%;
+  }
+}
+
+.time-panel {
+  display: flex;
+
+  * {
+    margin: 0px 5px;
+  }
+}

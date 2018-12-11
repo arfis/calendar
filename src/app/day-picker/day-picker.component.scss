@@ -1,0 +1,81 @@
+.calendar {
+  display: flex;
+  position: relative;
+
+  .weeks {
+    height: 100%;
+    background-color: aliceblue;
+    width: 5%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.52);
+
+    .week {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid rgba(0, 0, 0, 0.52);
+      border-left: 1px solid rgba(0, 0, 0, 0.52);
+    }
+  }
+}
+
+.days-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  border-left: 1px solid rgba(0, 0, 0, 0.52);
+  border-top: 1px solid rgba(0, 0, 0, 0.52);
+  width: 95%;
+
+  .day {
+    width: calc(100% / 7);
+    border-right: 1px solid rgba(0, 0, 0, 0.52);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.52);
+    box-sizing: border-box;
+    padding: 5px;
+
+    &.clickable {
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(0, 128, 0, 0.57);
+      }
+    }
+  }
+
+  .another-month {
+    background-color: gray;
+    cursor: default;
+  }
+
+  .selected-day {
+    background-color: green;
+  }
+
+  .current-day {
+    font-weight: bold;
+  }
+}
+
+.info-panel {
+  text-align: center;
+  user-select: none;
+
+  * {
+    cursor: pointer;
+  }
+
+  .next {
+    float: right;
+  }
+
+  .previous {
+    float: left;
+  }
+
+  .date {
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+}

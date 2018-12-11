@@ -1,0 +1,21 @@
+<div class="info-panel">
+  <span class="previous" (click)="previousMonth()"><</span>
+  <span class="date" (click)="reset()">{{currentMonthName}}</span>
+  <span class="next" (click)="nextMonth()">></span>
+</div>
+<div class="calendar">
+  <div class="weeks">
+    <div *ngFor="let week of weeks" class="week">{{week}}</div>
+  </div>
+  <div class="days-wrapper">
+    <ms-day *ngFor="let data of days"
+            (click)="selectDate(data)" class="day"
+            [ngClass]="{
+              'clickable': data.day,
+              'another-month': data.month !== currentMonthType,
+              'current-day': isCurrentDay(data.day),
+              'selected-day': data.day && data.day === selectedDay}"
+            [locale]="locale"
+            [day]="data.day"></ms-day>
+  </div>
+</div>

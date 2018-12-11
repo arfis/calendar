@@ -1,0 +1,21 @@
+.content {
+  padding: 2px;
+  text-align: center;
+  user-input: none;
+  box-sizing: border-box;
+
+  .day-name {
+    @media screen and (max-width: 340px) {
+      font-size: 6px;
+    }
+
+    @media screen and (max-width: 700px) {
+      font-size: 10px;
+    }
+
+    padding: 2px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

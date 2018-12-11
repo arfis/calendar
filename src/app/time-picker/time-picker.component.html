@@ -1,0 +1,7 @@
+<div class="wrapper">
+  <span class="label">{{label}}</span>
+  <input [name]="name"
+         [(ngModel)]="currentTime"
+         (keyup)="onChanges()"
+         (keydown)="onKeyDown($event)"/>
+</div>

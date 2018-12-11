@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+
+  .time-axis {
+    width: 20%;
+
+    .frame {
+      font-size: 10px;
+      text-align: right;
+      position: relative;
+
+      .time {
+        position: absolute;
+        top: -6px;
+        right: 5px;
+      }
+    }
+  }
+
+  .content {
+    width: 80%;
+    user-select: none;
+
+    .frame {
+      border-top: 1px solid rgba(0, 0, 0, 0.30);
+
+      &:hover {
+        background-color: rgba(0, 128, 0, 0.57);
+      }
+
+      &.selected {
+        background-color: rgba(0, 128, 0, 0.57);
+      }
+    }
+  }
+
+  .frame {
+    box-sizing: border-box;
+    height:20px;
+  }
+}
