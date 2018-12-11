@@ -29,6 +29,8 @@ export class DayOverviewPlanComponent implements OnInit, OnChanges {
   @ViewChild('content')
   element;
 
+  constructor(private componentElement: ElementRef) {}
+
   ngOnChanges() {
     this.selected.push(this.startTime);
   }
@@ -88,9 +90,9 @@ export class DayOverviewPlanComponent implements OnInit, OnChanges {
 
   getPosition(event) {
     const {offsetTop, offsetHeight} = this.element.nativeElement;
-    const height = this.element.nativeElement.getBoundingClientRect().height;
-    console.log('height ', this.actualPosition);
-    const positionY = ((event.pageY - offsetTop) / offsetHeight) * 100;
+    const {scrollTop} = this.componentElement.nativeElement;
+
+    const positionY = ((event.pageY + scrollTop - offsetTop) / offsetHeight) * 100;
 
     return positionY;
   }
